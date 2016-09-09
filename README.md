@@ -4,7 +4,7 @@
 [ ![Codeship Status for alexandre/cashflow](https://codeship.com/projects/403e0be0-587a-0134-2b2b-7e9c42a73e5a/status?branch=master)](https://codeship.com/projects/172885)
 
 This is a tiny and simple library to work with cash flows. I'm actually learning about cash flows,
-so the whole repository is just an experiment. (no news here :])
+what means the whole repository is just an experiment. =]
 
 ## What is a cash flow:
 
