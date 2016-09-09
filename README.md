@@ -1,5 +1,7 @@
 # Cash Flow
 
+[![Code Health](https://landscape.io/github/alexandre/cashflow/master/landscape.svg?style=flat)](https://landscape.io/github/alexandre/cashflow/master)
+
 This is a tiny and simple library to work with cash flows. I'm actually learning about cash flows,
 so the whole repository is just an experiment. (no news here :])
 
