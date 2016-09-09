@@ -76,8 +76,7 @@ class CashFlow(object):
         return any(t == transaction for t in self._transactions)
 
     def __iter__(self):
-        for tranasction in self._transactions:
-            yield tranasction
+        yield from self._transactions
 
     def __getitem__(self, item):
         if isinstance(item, int):
