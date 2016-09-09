@@ -6,6 +6,8 @@
 This is a tiny and simple library to work with cash flows. I'm actually learning about cash flows,
 what means the whole repository is just an experiment. =]
 
+I also would say if you like property tests, magic methods and etc, you will like of some experiments here...
+
 ## What is a cash flow:
 
 (FIXME): [What I undertand as] A cash flow is a list of transactions. For this moment, I don't need
