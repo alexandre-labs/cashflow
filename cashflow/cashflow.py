@@ -20,6 +20,11 @@ class Transaction(object):
         self._timestamp = timestamp
         self._metadata = metadata
 
+    def __repr__(self):
+        return 'Transaction({}, {}, {})'.format(
+            self.value, self.timestamp, self.metadata
+        )
+
     def __eq__(self, other):
 
         if not isinstance(other, Transaction):
@@ -52,6 +57,56 @@ class Transaction(object):
     def serialize(self):
         return {
             'value': self.value,
-            'timestamp': self.timestamp.isoformat(),
+            'timestamp': self.timestamp,
             'metadata': self.metadata
         }
+
+
+class CashFlow(object):
+
+    ''' A Cash Flow is just a list of transaction (Obvious, Captain) '''
+
+    def __init__(self, transactions=None):
+        self._transactions = tuple()
+
+        for t in (transactions or tuple()):
+            self.append(t)
+
+    def __contains__(self, transaction):
+        return any(t == transaction for t in self._transactions)
+
+    def __iter__(self):
+        for tranasction in self._transactions:
+            yield tranasction
+
+    def __getitem__(self, item):
+        if isinstance(item, int):
+            return CashFlow(transactions=(self._transactions[item], ))
+        return CashFlow(transactions=self._transactions[item])
+
+    def __len__(self):
+        return len(self._transactions)
+
+    @property
+    def transactions(self):
+        yield from self.__iter__()
+
+    @property
+    def net_value(self):
+        return sum(transction.value for transction in self.transactions)
+
+    def append(self, transaction):
+
+        if transaction in self:
+
+            raise ValueError(
+                '{} already added to the cash flow'.format(repr(transaction))
+            )
+
+        self._transactions += (transaction, )
+
+    def filter(self, predicate):
+        return CashFlow(transactions=filter(predicate, self._transactions))
+
+    def serialize(self):
+        return {'cashflow': [transaction.serialize() for transaction in self]}
