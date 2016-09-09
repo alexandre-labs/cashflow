@@ -40,7 +40,7 @@ class Transaction(object):
         ])
 
     def __ne__(self, other):
-        return not self.__eq__(other)
+        return not (self == other)
 
     @property
     def value(self):
@@ -89,7 +89,7 @@ class CashFlow(object):
 
     @property
     def transactions(self):
-        yield from self.__iter__()
+        yield from self
 
     @property
     def net_value(self):
