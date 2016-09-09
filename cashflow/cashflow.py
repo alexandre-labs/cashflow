@@ -93,7 +93,7 @@ class CashFlow(object):
 
     @property
     def net_value(self):
-        return sum(transction.value for transction in self.transactions)
+        return sum(transaction.value for transaction in self.transactions)
 
     def append(self, transaction):
 
