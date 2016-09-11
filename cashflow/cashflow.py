@@ -72,8 +72,8 @@ class CashFlow(object):
         for t in (transactions or tuple()):
             self.append(t)
 
-    def __contains__(self, transaction):
-        return any(t == transaction for t in self._transactions)
+    def __contains__(self, other_transaction):
+        return any(transaction == other_transaction for transaction in self)
 
     def __iter__(self):
         yield from self._transactions
@@ -92,7 +92,7 @@ class CashFlow(object):
 
     @property
     def net_value(self):
-        return sum(transaction.value for transaction in self.transactions)
+        return sum(transaction.value for transaction in self)
 
     def append(self, transaction):
 
