@@ -1,6 +1,6 @@
 # Cash Flow
 
-[![Code Health](https://landscape.io/github/alexandre/cashflow/master/landscape.svg?style=flat)](https://landscape.io/github/alexandre/cashflow/master)
+[![Code Health](https://landscape.io/github/alexandre/cashflow/master/landscape.svg?style=flat)](https://landscape.io/github/alexandre/cashflow/master) [![GuardRails badge](https://badges.production.guardrails.io/alexandre/cashflow.svg)](https://www.guardrails.io)
 [ ![Codeship Status for alexandre/cashflow](https://codeship.com/projects/403e0be0-587a-0134-2b2b-7e9c42a73e5a/status?branch=master)](https://codeship.com/projects/172885)
 
 This is a tiny and simple library to work with cash flows. I'm actually learning about cash flows,
